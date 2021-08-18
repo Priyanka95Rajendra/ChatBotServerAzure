@@ -1,0 +1,13 @@
+d5c2482f-3c0b-4294-9dc7-e9c01c77affe
+Passw0rd123!@#
+
+$subscriptionKey = '671c956b27be471fbaef1596d4f3c800';
+$region = 'westus';
+
+// subscription key and region for speech services.
+    var subscriptionKey= "671c956b27be471fbaef1596d4f3c800";
+     var serviceRegion= "westus"
+     var languageTargetOptions= "English"; 
+     var languageSourceOptions= "English-US";
+    var SpeechSDK;
+    var recognizer;

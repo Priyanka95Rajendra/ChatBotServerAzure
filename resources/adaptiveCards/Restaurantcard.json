@@ -1,0 +1,53 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+      {
+        "speak": "Samosa Wallla is a Samosa restaurant which is rated 9.3 by customers.",
+        "type": "ColumnSet",
+        "columns": [
+          {
+            "type": "Column",
+            "width": 2,
+            "items": [
+              {
+                "type": "TextBlock",
+                "text": " Recent Customer Review "
+              },
+              {
+                "type": "TextBlock",
+                "text": "Venition Resorts",
+                "weight": "bolder",
+                "size": "extraLarge",
+                "spacing": "none"
+              },
+              {
+                "type": "TextBlock",
+                "text": "9.3 ★★★★★★★★★☆ (1100) · $$",
+                "isSubtle": true,
+                "spacing": "none"
+              },
+              {
+                "type": "TextBlock",
+                "text": "** Priyanka. said** \"I'm compelled to give this place 10 stars due to the number of times I've chosen to eat here this past year!\"",
+                "size": "small",
+                "wrap": true
+              }
+            ]
+          },
+          {
+            "type": "Column",
+            "width": 1,
+            "items": [
+              {
+                "type": "Image",
+                "url": "https://pix10.agoda.net/hotelImages/2937/-1/5ea3f242f31b359ec7d82aede205611f.jpg?s=1024x768",
+                "size": "auto"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

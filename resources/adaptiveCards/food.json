@@ -1,0 +1,51 @@
+{
+   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+   "type": "AdaptiveCard",
+   "version": "1.3",
+   "body": [
+       {
+           "type": "TextBlock",
+           "text": "Please see the Menu Below & Enter Item ID to Order",
+           "size": "Medium",
+           "wrap": true,
+           "fontType": "Monospace"
+       },
+       {
+           "type": "TextBlock",
+           "text": "Chicken , ID -1 , Price- 10$",
+           "wrap": true
+       },
+       {
+           "type": "ImageSet",
+           "imageSize": "medium",
+           "images": [
+               {
+                   "type": "Image",
+                   "url": "https://contososcubademo.azurewebsites.net/assets/steak.jpg",
+                   "altText": "Steak cut with fries",
+                   "size": "Medium"
+               }
+           ]
+       },
+       {
+           "type": "TextBlock",
+           "text": "Steak, ID - 2, Price - 25$",
+           "wrap": true
+       },
+       {
+           "type": "Image",
+           "url": "https://contososcubademo.azurewebsites.net/assets/chicken.jpg",
+           "width": "85px"
+       },
+       {
+           "type": "TextBlock",
+           "text": "Dessert, ID- 3, Price - 15$",
+           "wrap": true
+       },
+       {
+           "type": "Image",
+           "url": "https://contososcubademo.azurewebsites.net/assets/tofu.jpg",
+           "width": "85px"
+       }
+   ]
+}

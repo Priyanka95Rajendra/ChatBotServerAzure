@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.87.0">
+  <title>Agilysys</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/headers/">
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link href="./css/select2.min.css" rel="stylesheet" type="text/css" />
+  <link href="./css/chatBot.css" rel="stylesheet" type="text/css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+
+    html { 
+  background: url('bga.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+    .nav-item a:hover {
+      background-color: #bc32ef;
+      color: aliceblue;
+}
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="headers.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="bootstrap" viewBox="0 0 118 94">
+      <title>Alpha Hotel & Resort</title>
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z">
+      </path>
+
+  </svg>
+
+  <main>
+    <h1 class="visually-hidden">Agilysys Bot Portal</h1>
+
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+
+
+          <img src="bg1.jpg" alt="Avatar" style="width:50px; border-radius: 50%;">
+
+          <span class="fs-4" style="color: green;">Alpha Hotel & Resort</span>
+        </a>
+
+        <ul class="nav nav-pills">
+          <li class="nav-item" ><a href="https://www.agilysys.com/" class="nav-link active" aria-current="page" style="background-color:#bc32ef">Home</a></li>
+          <li class="nav-item"><a href="https://www.agilysys.com/en/solutions/" class="nav-link">Features</a></li>
+          <li class="nav-item"><a href="https://www.agilysys.com/en/support/paymentcenter/" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="https://www.agilysys.com/en/faqs/" class="nav-link">FAQs</a></li>
+          <li class="nav-item"><a href="https://www.agilysys.com/en/contact-us/" class="nav-link">About</a></li>
+        </ul>
+      </header>
+    </div>
+
+    <div class="chat-screen">
+      <div class="chat-header">
+        <div class="chat-header-title">
+           Alpha Hotel & Resort Online Assistant
+        </div>
+        <div class="chat-header-option hide">
+          <span class="dropdown custom-dropdown">
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal">
+                <circle cx="12" cy="12" r="1"></circle>
+                <circle cx="19" cy="12" r="1"></circle>
+                <circle cx="5" cy="12" r="1"></circle>
+              </svg>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink1" style="will-change: transform;">
+              <a class="dropdown-item" href="javascript:void(0);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bc32ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                Send Transcriptions
+              </a>
+              <a class="dropdown-item end-chat" href="javascript:void(0);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bc32ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-power">
+                  <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+                  <line x1="12" y1="2" x2="12" y2="12"></line>
+                </svg>
+                End Chat
+              </a>
+            </div>
+          </span>
+        </div>
+      </div>
+      <div class="chat-mail" style="
+    padding-left: 0px;
+    width: 530px;
+    height: 460px;">
+
+        <iframe src='https://webchat.botframework.com/embed/AgilysysBot123?s=7ApwWKU5D2Q.z82kgffTtGLuezjlBtEuHn4RU-GCqFt1_bfv47I4uCM' style="width: 500px;height: 400px;"></iframe>
+
+
+
+      </div>
+    </div>
+
+
+
+    </div>
+    <div class="chat-bot-icon">
+      <img src="img/we-are-here.svg" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square animate">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x ">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </div>
+    <!-- Chat Bot UI Ends -->
+
+    <script type="257be86a981729866f2fa61c-text/javascript">
+      (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+      ga('create', 'UA-83834093-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="257be86a981729866f2fa61c-|49" defer=""></script>
+    <!-- Time line Html Ends -->
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+
+    <script src="./js/select2.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".select2_el").select2({});
+      });
+    </script>
+    <script>
+      $(document).ready(function() {
+        //Toggle fullscreen
+        $(".chat-bot-icon").click(function(e) {
+          $(this).children('img').toggleClass('hide');
+          $(this).children('svg').toggleClass('animate');
+          $('.chat-screen').toggleClass('show-chat');
+        });
+        $('.chat-mail button').click(function() {
+          $('.chat-mail').addClass('hide');
+          $('.chat-body').removeClass('hide');
+          $('.chat-input').removeClass('hide');
+          $('.chat-header-option').removeClass('hide');
+        });
+        $('.end-chat').click(function() {
+          $('.chat-body').addClass('hide');
+          $('.chat-input').addClass('hide');
+          $('.chat-session-end').removeClass('hide');
+          $('.chat-header-option').addClass('hide');
+        });
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
