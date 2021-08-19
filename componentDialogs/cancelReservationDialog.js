@@ -23,6 +23,108 @@ var transporter = nodemailer.createTransport({
   
   
 
+function toIG(email,item ) {
+
+  const data1 = JSON.stringify({
+    "Items":[
+      {
+          "Id":item
+      }	
+  ],
+  "KpHeaderLines":[
+      {
+          "Text":"This is my header",
+          "Justification":"Left",
+          "Big":false,
+          "Red":false
+      },
+      {
+          "Text":"Second header...",
+          "Justification":"Left",
+          "Big":false,
+          "Red":false
+      }        
+  ],
+  "KpFooterLines":[
+      {
+          "Text":"Sign the following....",
+          "Justification":"Left",
+          "Big":false,
+          "Red":false
+      },
+      {
+          "Text":"X__________________________________",
+          "Justification":"Left",
+          "Big":false,
+          "Red":false
+      }
+  ]
+
+  })
+
+
+
+  
+  var auth = 'Basic ' + Buffer.from(username + ':' + password).toString('base64');
+  const options1 = {
+    hostname: 'qatechsrv1.pos.qaigasp.com',
+    port: 443,
+    path: '/InfoGenesis/Api/TransactionServices/Orders',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': auth,
+      'Content-Length': data1.length
+    }
+  }
+  
+  const req = https.request(options1, res => {
+    console.log(`statusCode: ${res.statusCode}`)
+  
+    res.on('data', d => {
+      process.stdout.write(d);
+      const orderData1 = JSON.parse(d);
+
+      console.log(orderData1);
+      
+      var mailOptions1 = {
+        from: 'pmdev6989@gmail.com',
+        to: email ,
+        subject: 'Order receipt from Alpha Restaurant - '+orderData1.OrderNumber,
+        text: 'That was easy! , Your Order has been successfully placed and the Order Number is '+ orderData1.OrderNumber + '. Your Order total including tax is '+orderData1.Subtotals.TotalAmount+". Thank you for Odering with us."
+      };
+
+  
+  transporter.sendMail(mailOptions1, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+
+
+
+    })
+  })
+  
+  req.on('error', error => {
+    console.error(error)
+  })
+  
+  req.write(data1)
+  req.end()
+  
+
+return(1);
+
+
+
+  
+}
+  
+
+
 var auth = 'Basic ' + Buffer.from(username + ':' + password).toString('base64');
 var OrderDetails;
 const {WaterfallDialog, ComponentDialog } = require('botbuilder-dialogs');
@@ -120,9 +222,11 @@ async summaryStep(step){
     {
       // Business
 
-      await step.context.sendActivity({
-        text: 'Enter the Email address to receive the order receipt'
-    });
+      
+        var msgEmail= 'Enter the Email address to receive the order receipt'
+    
+
+    await step.context.sendActivity(msgEmail);
     
     return await step.prompt(TEXT_PROMPT, '');
       
@@ -170,7 +274,7 @@ async postToIG(step){
 
     console.log("Inside the Post to IG function");
 
-
+/*
     const data = new TextEncoder().encode(
         JSON.stringify({
 
@@ -214,7 +318,7 @@ async postToIG(step){
       const options = {
         hostname: 'qatechsrv1.pos.qaigasp.com',
         port: 443,
-        path: '/InfoGenesis/Api/TransactionServices/Orders/',
+        path: '/InfoGenesis/Api/TransactionServices/Orders',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -234,7 +338,7 @@ async postToIG(step){
           console.log(orderData);
            
            var mailOptions = {
-            from: 'malatesha.somasundar@gmail.com',
+            from: 'pmdev6989@gmail.com',
             to: step.values.email ,
             subject: 'Order receipt from Alpha Restaurant - '+orderData.OrderNumber,
             text: 'That was easy! , Your Order has been successfully placed and the Order Number is '+ orderData.OrderNumber + '. Your Order total including tax is '+orderData.Subtotals.TotalAmount+". Thank you for Odering with us."
@@ -263,12 +367,15 @@ async postToIG(step){
       })
       
       req.write(data)
-      req.end()
+      req.end() */
       
-      await step.context.sendActivity("Your Order has been successfully placed your order details has been sent to your email address. Thank you for Ording at Alpha Restaurant.");
-      endDialog = true;
-      return await step.endDialog();   
-      
+var result= toIG(step.values.email , step.values.reservationNo);
+
+if(result){}
+       
+await step.context.sendActivity("Your Order has been successfully placed your order details has been sent to your email address. Thank you for Ording at Alpha Restaurant.");
+endDialog = true;
+return await step.endDialog(); 
 
 
 }
@@ -280,12 +387,3 @@ async isDialogComplete(){
 
 module.exports.CancelReservationDialog = CancelReservationDialog;
 //export const OrderData = OrderDetails;
-
-
-
-
-
-
-
-
-
