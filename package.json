@@ -16,7 +16,7 @@
         "url": "https://github.com"
     },
     "dependencies": {
-        "axios": "^0.19.2",
+
         "base-64": "^1.0.0",
         "body-parser": "^1.19.0",
         "botbuilder": "^4.7.2",
